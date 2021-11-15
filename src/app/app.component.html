@@ -1,0 +1,30 @@
+<h1>SHORTEN URL AP</h1>
+<div class="wrap">
+  <div class="search">
+    <input type="text" [(ngModel)]="longURL" class="searchTerm" placeholder="Enter long URL to shorten further">
+    <button type="submit" class="searchButton" (click)="getShortenURL()">
+      Submit
+    </button>
+  </div>
+
+  <div style="padding-top: 30px;">Short URL: {{shortURL}}</div>
+
+
+  <h1>URLs Available</h1>
+
+  <table id="urls">
+    <tr>
+      <th>ID</th>
+      <th>Short URL</th>
+      <th>Long URL</th>
+      <th>Hit Count</th>
+    </tr>
+
+    <tr *ngFor="let item of allURLs">
+      <td>{{item.id}}</td>
+      <td>{{item.shorturl}}</td>
+      <td>{{item.longurl}}</td>
+      <td>{{item.hitcount}}</td>
+    </tr>
+  </table>
+</div>
